@@ -7,6 +7,7 @@ import { GET_PATIENT_DATA, UPDATE_PATIENT_DATA } from "../../../store/actions";
 import classes from "./styles/patient.module.scss";
 import Loader from "../../../components/common/Loader";
 import * as yup from "yup";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function PatientOnboarding() {
   const dispatch = useDispatch();
@@ -165,8 +166,8 @@ function PatientOnboarding() {
                     error={formik.touched.state && Boolean(formik.errors.state)}
                   />
                 </Box>
-                <Button type="submit">
-                  Submit
+                <Button type="submit" disabled={loading}>
+                  {loading ? <CircularProgress size={20} /> : "Submit"}
                 </Button>
               </form>
             </Grid>
