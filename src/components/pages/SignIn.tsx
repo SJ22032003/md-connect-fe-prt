@@ -24,6 +24,7 @@ import {
   REGISTER_AS_DOCTOR,
 } from "../../store/actions";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function SignIn() {
   const dispatch = useDispatch();
@@ -34,12 +35,14 @@ function SignIn() {
 
   const [signInUser, setSignInUser] = useState(PATIENT);
   const [signInMethod, setSignInMethod] = useState(LOGIN);
+  const [loading, setLoading] = useState(false);
 
   const formik = useFormik({
     initialValues,
     validationSchema,
     enableReinitialize: true,
     onSubmit: (values) => {
+      setLoading(true);
       if (signInMethod === LOGIN) {
         switch (signInUser) {
           case PATIENT:
@@ -49,7 +52,9 @@ function SignIn() {
                 email: values.email,
                 password: values.password,
               },
-              navigate: (path: string = "/patient/dashboard/home") => navigate(path),
+              navigate: (path: string = "/patient/dashboard/home") =>
+                navigate(path),
+              setLoading,
             });
             break;
           case DOCTOR:
@@ -60,6 +65,7 @@ function SignIn() {
                 password: values.password,
               },
               navigate: (path: string = "/doctor/dashboard/home") => navigate(path),
+              setLoading,
             });
         }
       } else {
@@ -71,7 +77,8 @@ function SignIn() {
                 email: values.email,
                 password: values.password,
               },
-              navigate,
+              navigate: (path: string = "/onboarding/patient") => navigate(path),
+              setLoading,
             });
             break;
           case DOCTOR:
@@ -82,6 +89,7 @@ function SignIn() {
                 password: values.password,
               },
               navigate: (path: string = "/onboarding/doctor") => navigate(path),
+              setLoading,
             });
         }
       }
@@ -95,8 +103,7 @@ function SignIn() {
           <Paper
             elevation={3}
             sx={{
-              maxWidth: 500,
-              minWidth: 300,
+              width: "clamp(350px, 42.857vw, 600px)",
               padding: "3%",
             }}
           >
@@ -160,8 +167,20 @@ function SignIn() {
                     type="submit"
                     onSubmit={() => formik.handleSubmit()}
                     endIcon={<LockIcon sx={{ color: "#fff" }} />}
+                    disabled={loading}
                   >
-                    {signInMethod === LOGIN ? "Login" : "Register"}
+                    {loading ? (
+                      <CircularProgress
+                        size={20}
+                        sx={{
+                          color: "#fff",
+                        }}
+                      />
+                    ) : signInMethod === LOGIN ? (
+                      "Login"
+                    ) : (
+                      "Register"
+                    )}
                   </Button>
                 </form>
               </Grid>

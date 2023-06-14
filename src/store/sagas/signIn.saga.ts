@@ -11,7 +11,7 @@ interface IAction {
   type: string;
   payload: {};
   navigate?: (path?: string) => void;
-  setLoading?: () => void;
+  setLoading?: (bool: boolean) => void;
 }
 
 export function* loginAsPatientSaga(
@@ -33,6 +33,7 @@ export function* loginAsPatientSaga(
       }
     }
     action.navigate && action.navigate();
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -48,8 +49,9 @@ export function* registerAsPatientSaga(
         type: actionTypes.REGISTER_AS_PATIENT_SUCCESS,
         payload: response.data,
       });
-      action.navigate && action.navigate("/onboarding/patient");
+      action.navigate && action.navigate();
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -72,6 +74,7 @@ export function* loginAsDoctorSaga(action: any): Generator<any, void, any> {
       }
       action.navigate && action.navigate();
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -87,8 +90,9 @@ export function* registerAsDoctorSaga(
         type: actionTypes.REGISTER_AS_DOCTOR_SUCCESS,
         payload: response.data,
       });
-      action.navigate && action.navigate("/onboarding/doctor");
+      action.navigate && action.navigate();
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
