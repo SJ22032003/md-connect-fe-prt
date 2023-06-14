@@ -19,7 +19,6 @@ export function* loginAsPatientSaga(
 ): Generator<any, void, any> {
   try {
     const response = yield call(loginAsPatientApi, action);
-    console.log(response);
     if (response && response.status === 200) {
       yield put({
         type: actionTypes.LOGIN_AS_PATIENT_SUCCESS,
@@ -68,6 +67,9 @@ export function* loginAsDoctorSaga(action: any): Generator<any, void, any> {
         type: actionTypes.LOGIN_AS_DOCTOR_SUCCESS,
         payload: response.data,
       });
+      if (!response.data.onBoarded) {
+        return action.navigate && action.navigate("/onboarding/doctor");
+      }
       action.navigate && action.navigate();
     }
   } catch (error: any) {
