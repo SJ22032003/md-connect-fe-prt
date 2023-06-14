@@ -87,6 +87,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 2rem 0;
   & > div {
     & > h5 {
       font: 700 1.6rem var(--font-family);
@@ -116,4 +117,11 @@
       }
     }
   }
+}
+
+.appointmentEmptyState {
+  font: 600 1.3rem var(--font-family);
+  color: #000;
+  padding: 1rem;
+  text-align: center;
 }

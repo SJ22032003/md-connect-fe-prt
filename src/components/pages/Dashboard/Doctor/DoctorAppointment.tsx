@@ -50,7 +50,7 @@ function DoctorAppointment() {
 
   const PatientReports = ({ report }: any) => {
     if (!report.length) {
-      return <Typography>No Reports from this Patient</Typography>;
+      return ;
     }
     return (
       <Accordion>
@@ -213,7 +213,7 @@ function DoctorAppointment() {
                         gutterBottom
                         className={classes.appointmentEmptyState}
                       >
-                        No Reports Found
+                        No Appointments Found
                       </Typography>
                     </>
                   )}
