@@ -1,0 +1,21 @@
+@function clamp-by-ratio($min, $max, $percent: false) {
+  $ratio: calc(
+    calc($max / 1400) * 100
+  ); // Calculate ratio based on 1920px viewport width
+  $vw: "vw";
+  $px: "px";
+  @if $percent {
+    $ratio: 100%;
+    @return clamp(
+      #{$min}#{$px},
+      #{$ratio},
+      #{$max}#{$px}
+    ); // Return CSS clamp() function
+  } @else {
+    @return clamp(
+      #{$min}#{$px},
+      #{$ratio}#{$vw},
+      #{$max}#{$px}
+    ); // Return CSS clamp() function
+  }
+}

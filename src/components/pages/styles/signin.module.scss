@@ -1,0 +1,98 @@
+// CENTER
+@mixin centering {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+  // margin: clamp(50px, 5vw, 70px) 0;
+}
+
+.chooseSignInUser {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 1rem 0;
+  & h6 {
+    text-decoration-color: var(--background-color);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+    cursor: pointer;
+    font: 600 1.3rem var(--font-family);
+  }
+}
+
+.signInUserImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  & > img {
+    max-width: 350px;
+    object-fit: cover;
+  }
+}
+
+.signInFormContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  & > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+    & > div > div > input {
+      font: 500 1.2rem var(--font-family);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      &:focus {
+        border: 1px solid var(--background-color);
+      }
+    }
+    & > button {
+      background-color: var(--background-color);
+      font: 500 1.2rem var(--font-family);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        background-color: #fff;
+        border: 1px solid var(--background-color);
+        color: var(--background-color);
+      }
+    }
+  }
+}
+
+.userSignInMethodContainer {
+  & > p {
+    font: 500 1rem var(--font-family);
+    color: #232d3c;
+    margin: 1rem 0;
+    & > span {
+      cursor: pointer;
+      color: var(--background-color);
+      font-size: 1rem;
+    }
+  }
+}

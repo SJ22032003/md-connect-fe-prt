@@ -1,0 +1,119 @@
+@import "./explore.module.scss";
+
+.mainHeadingReportContainer {
+  & > h3 {
+    font: 600 1.5rem var(--font-family);
+    padding: 1rem;
+    color: #000;
+    & > span {
+      color: var(--background-color);
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.appointmentContainerDoc {
+  display: flex;
+  flex-direction: column;
+  & > div {
+    flex-grow: 1;
+    border: 2px solid var(--background-color);
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 0.5rem;
+    .patientDetailsContainer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @media screen and (max-width: 856px) {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: unset;
+      }
+      .patientProfileData {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        & > div {
+          & > h4 {
+            font: 600 1.8rem var(--font-family);
+            padding: 1rem;
+            color: #000;
+          }
+          & > button {
+            font: 600 1rem var(--font-family);
+            width: 100%;
+            background-color: var(--background-color);
+            text-transform: none !important;
+            padding: 0.5rem;
+            color: #fff;
+            &:hover {
+              background-color: #fff;
+              border: 1px solid var(--background-color);
+              color: var(--background-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.patientMeetDetailContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+  & > h4 {
+    padding: 1rem;
+    color: #000;
+    font: 700 1.3rem var(--font-family);
+    & > span {
+      color: var(--background-color);
+      font-size: larger;
+    }
+  }
+  & > h5 {
+    font: 600 1rem var(--font-family);
+    & > span {
+      color: var(--background-color);
+      font-size: large;
+    }
+  }
+}
+
+.accordionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & > div {
+    & > h5 {
+      font: 700 1.6rem var(--font-family);
+    }
+    & > h6 {
+      font: 600 1.2rem var(--font-family);
+      & > span {
+        color: var(--background-color);
+        font-size: larger;
+      }
+    }
+    & > p {
+      font: 600 1rem var(--font-family);
+      & > span {
+        color: var(--background-color);
+        font-size: large;
+      }
+    }
+    & > button {
+      background-color: var(--background-color);
+      color: #fff;
+      font: 700 1rem var(--font-family);
+      &:hover {
+        background-color: #fff;
+        color: var(--background-color);
+        border: 1px solid var(--background-color);
+      }
+    }
+  }
+}

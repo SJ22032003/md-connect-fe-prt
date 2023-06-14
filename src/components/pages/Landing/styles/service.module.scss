@@ -1,0 +1,96 @@
+// CENTER
+@mixin centering {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: fit-content;
+  margin: clamp(50px, 5vw, 70px) 0;
+}
+
+.serviveMain {
+  @include centering;
+  align-items: center;
+  flex-direction: column;
+  padding: 4%;
+}
+
+.serviceHead {
+  @include centering;
+  flex-direction: column;
+  padding: 4%;
+  & > h2 {
+    font: 700 3.5rem var(--font-family);
+    color: #232d3c;
+    margin: 1rem 0;
+    text-align: center;
+    & > span {
+      color: var(--background-color);
+      font-size: 4rem;
+    }
+  }
+  & > p {
+    font: 600 1.4rem var(--font-family);
+    color: #2b2e2c;
+  }
+}
+
+.serviceCardContainer {
+  @include centering;
+  flex-wrap: wrap;
+}
+
+.seriveCardContent {
+  & > h5 {
+    font: 700 1.3rem var(--font-family);
+    color: var(--background-color);
+    margin: 1rem 0;
+  }
+  & > p {
+    font: 600 1rem var(--font-family);
+    color: #2b2e2c;
+    margin: 1rem 0;
+  }
+}
+
+.serviceJoinNow {
+  flex-direction: column;
+  padding: 4%;
+  & > h5 {
+    font: 700 3rem var(--font-family);
+    color: #232d3c;
+    margin: 1.4rem 0;
+    & > span {
+      color: var(--background-color);
+      font-size: 4rem;
+    }
+  }
+  & > p {
+    font: 600 1rem var(--font-family);
+    color: #2b2e2c;
+    line-height: 1.5rem;
+  }
+}
+
+.serviceCardButton {
+  background-color: var(--background-color);
+  color: #fff;
+  font: 500 1.2rem var(--font-family);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: #7256d2;
+  }
+  &:active {
+    transform: scale(0.9);
+  }
+}

@@ -1,0 +1,84 @@
+// CENTER
+@mixin centering {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: fit-content;
+  margin: clamp(50px, 5vw, 70px) 0;
+}
+
+.aboutHead {
+  @include centering;
+  flex-direction: column;
+  padding: 4%;
+  & > h2 {
+    font: 700 3.5rem var(--font-family);
+    color: #232d3c;
+    margin: 1rem 0;
+    text-align: center;
+    & > span {
+      color: var(--background-color);
+      font-size: 4rem;
+    }
+  }
+  & > p {
+    font: 600 1.4rem var(--font-family);
+    color: #2b2e2c;
+    & > span {
+      text-align: center;
+      margin: 0 0.7rem;
+      & > strong {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--background-color);
+      }
+    }
+  }
+}
+
+
+.heroMainContainer {
+  @include centering;
+  flex-direction: column;
+  padding: 4%;
+  text-align: center;
+  & > section > h1 {
+    font: 700 3.5rem var(--font-family);
+    color: #232d3c;
+    margin: 1rem 0;
+    & > span {
+      color: var(--background-color);
+      font-size: 4rem;
+    }
+  }
+  & section > h4 {
+    font: 700 2.3rem var(--font-family);
+    color: var(--background-color);
+    margin: 1rem 0;
+  }
+  & section > p {
+    font: 600 1.2rem var(--font-family);
+    color: #2b2e2c;
+    margin: 1rem 0;
+  }
+}
+
+.heroImgContainer {
+  @include centering;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.heroImg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 2rem 0;
+}

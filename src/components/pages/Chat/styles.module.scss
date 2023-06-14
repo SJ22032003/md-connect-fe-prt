@@ -1,0 +1,244 @@
+@import "../Dashboard/styles/report.module.scss";
+
+.sideBarContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3%;
+  .sideBarHeader {
+    & > h4 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      font-family: var(--font-family);
+      margin-bottom: 0.5rem;
+    }
+    & > p {
+      font-size: 1.12rem;
+      font-weight: 500;
+      font-family: var(--font-family);
+      margin-bottom: 0.5rem;
+      & > span {
+        font-weight: 600;
+        font-size: larger;
+        font-family: var(--font-family);
+        color: var(--background-color);
+      }
+    }
+  }
+}
+
+.sideBarSearchBox {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchBarInput {
+  & > div > input {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    &::placeholder {
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-family: var(--font-family);
+      color: #333;
+    }
+  }
+}
+
+.sideBarList {
+  width: 100%;
+  max-height: calc(100vh - 260px);
+  overflow-y: auto;
+  & > aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 260px);
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #e0e0e0;
+    gap: 1rem;
+    cursor: pointer;
+    margin: 0.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 10px 3px 5px rgba(0, 0, 0, 0.1);
+    & > div {
+      & > h6 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: var(--font-family);
+        margin-bottom: 0.5rem;
+      }
+      & > p {
+        font-size: 0.9rem;
+        font-weight: 600;
+        font-family: var(--font-family);
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.exploreContainer {
+  width: 100%;
+  & > a {
+    width: 100%;
+    & > button {
+      height: 4rem;
+      width: 100%;
+      border-radius: 0.5rem;
+      background-color: var(--background-color) !important;
+      color: #fff;
+      text-transform: none !important;
+      font: 600 1rem Manrope, sans-serif !important;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: #fff !important;
+        color: var(--background-color) !important;
+        border: 1px solid var(--background-color) !important;
+      }
+      @media screen and (max-width: 768px) {
+        width: 100%;
+        height: 4rem;
+      }
+    }
+  }
+}
+
+.chatBoxTopBar {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1%;
+  border: 1px solid #e0e0e0;
+  max-height: 5rem;
+  & > div {
+    & > h6 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-family: var(--font-family);
+    }
+    & > p {
+      font-size: 0.99rem;
+      font-weight: 600;
+      font-family: var(--font-family);
+    }
+  }
+}
+
+.chatBoxMessage {
+  height: calc(100vh - 260px);
+  background-color: #f3f1f1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+}
+
+.chatBoxInput {
+  & > div > input {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font-family);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 3rem;
+    color: #333;
+    &::placeholder {
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-family: var(--font-family);
+      color: #333;
+    }
+  }
+}
+
+.noMessageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  & > img {
+    width: clamp-by-ratio(350, 650, true);
+  }
+}
+
+.chatBoxMessageContent{
+  margin: 5px;
+  width: fit-content;
+  max-width: 75%;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-family);
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    max-width: 90%;
+  }
+}
+
+.noMessageFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font: 600 1.2rem var(--font-family) !important;
+  color: #a7a7a7;
+}
+
+.dailogTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  margin-bottom: 0.5rem;
+}
+
+.dailogTextContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1%;
+  text-align: center;
+  gap: 2rem;
+  & > h3 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    margin-bottom: 0.5rem;
+  }
+  & > p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    margin-bottom: 0.5rem;
+    & > span {
+      font-size: 1.2rem;
+      font-weight: 600;
+      font-family: var(--font-family);
+      color: var(--background-color);
+    }
+  }
+}

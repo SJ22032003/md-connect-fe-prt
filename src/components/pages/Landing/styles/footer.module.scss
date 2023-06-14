@@ -1,0 +1,26 @@
+// CENTER
+@mixin centering {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: fit-content;
+  margin: clamp(50px, 5vw, 70px) 0 0 0;
+}
+
+.footerContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1%;
+  & > p {
+    color: #181818;
+    font: 600 0.8rem var(--font-family);
+  }
+}
