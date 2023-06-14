@@ -43,6 +43,7 @@
 .serviceCardContainer {
   @include centering;
   flex-wrap: wrap;
+  margin: 1rem;
 }
 
 .seriveCardContent {

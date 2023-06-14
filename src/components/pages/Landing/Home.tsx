@@ -1,7 +1,7 @@
 import { Box, Paper, Typography, Grid, Divider } from "@mui/material";
 import commonClasses from "./styles/common.module.scss";
 import classes from "./styles/home.module.scss";
-import heroImg from "../../../assets/main_hero_img.png";
+import heroImg from "../../../assets/main_hero_img.svg";
 import heroPlus from "../../../assets/hero_plus.svg";
 import heroHeart from "../../../assets/hero_heart.svg";
 

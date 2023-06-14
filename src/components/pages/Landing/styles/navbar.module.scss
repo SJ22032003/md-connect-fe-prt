@@ -42,3 +42,22 @@
   font: 500 1rem Manrope, sans-serif;
   cursor: pointer;
 }
+
+.navMenuListMobile{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > li {
+    margin: 0.5rem 0;
+    cursor: pointer;
+    &:hover{
+      border-bottom: 1px solid var(--background-color);
+    }
+    & > a {
+      font: 600 1.2rem var(--font-family);
+      color: #232d3c;
+      text-decoration: none;
+    }
+  }
+}
