@@ -12,7 +12,7 @@ function Dropzone({ config, setFile }: DropzoneProps) {
   const [fileName, setFileName] = useState<string | null>(null);
 
   const onDrop = useCallback((acceptedFiles: any) => {
-    console.log(acceptedFiles);
+
     if (acceptedFiles.length === 1) {
       setFileName(acceptedFiles[0].name);
       setFile(acceptedFiles[0]);

@@ -106,7 +106,6 @@ function index() {
       ...prevMessageList,
       message,
     ]);
-    console.log("message", message);
     if (message.appointmentData) {
       setDoctorAppointmentToPatient(true);
       setPatientAppointmentData(message.appointmentData);
@@ -126,7 +125,6 @@ function index() {
 
   const acceptAppointmentBookingFromDoctor = async (appointmentData: any) => {
     const doctorId = room.split("-")[1];
-    console.log("doctorId", doctorId, appointmentData);
     dispatch({
       type: UPDATE_DOCTOR_PATIENT_APPOINTMENT,
       payload: {

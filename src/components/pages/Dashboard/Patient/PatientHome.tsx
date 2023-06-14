@@ -22,8 +22,6 @@ function PatientHome() {
   }, []);
 
   const joinMeeting = (url: string) => {
-    // redirect to this url on different tab
-    console.log(url);
     window.open(url, "_blank");
   };
 
@@ -78,7 +76,7 @@ function PatientHome() {
                   Your <span>Appointments</span>
                 </Typography>
                 <Box>
-                  {appointment.length > 0 ? (
+                  {(appointment && appointment.length) > 0 ? (
                     appointment.map((item: any) => {
                       const { appointmentDate, appointementUrl, appointmentTitle, doctorId, _id } = item;
                       const { name, speciality } = doctorId;

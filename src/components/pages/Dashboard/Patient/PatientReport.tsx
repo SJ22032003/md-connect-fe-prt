@@ -175,9 +175,7 @@ const DailogForUploadingProfileImage = ({
   const formik = useFormik({
     initialValues: reportsInitailValues,
     validationSchema: reportsValidationSchema,
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    onSubmit: (values) => {},
   });
 
   const { storageRef, uploadBytes, uploadUrl } = firebaseInstance;
