@@ -33,8 +33,8 @@ export function* updatePatientDataSaga(action: any): Generator<any, void, any> {
         payload: response.data.data,
       });
       action.navigate && action.navigate();
-      action.setLoading && action.setLoading(false);
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -51,8 +51,8 @@ export function* updatePatientReportsSaga(
         payload: response.data.data,
       });
       action.navigate && action.navigate();
-      action.setLoading && action.setLoading(false);
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -70,8 +70,8 @@ export function* deletePatientReportsSaga(
       });
       action.navigate && action.navigate();
       action.fn && action.fn();
-      action.setLoading && action.setLoading(false);
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
@@ -105,8 +105,8 @@ export function* updateDoctorDataSaga(action: any): Generator<any, void, any> {
         payload: response.data.data,
       });
       action.navigate && action.navigate();
-      action.setLoading && action.setLoading(false);
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }

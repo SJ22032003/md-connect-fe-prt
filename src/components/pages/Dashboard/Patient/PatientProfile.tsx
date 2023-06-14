@@ -14,7 +14,10 @@ import {
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useFormik } from "formik";
-import { UPDATE_PATIENT_DATA, GET_PATIENT_DATA } from "../../../../store/actions";
+import {
+  UPDATE_PATIENT_DATA,
+  GET_PATIENT_DATA,
+} from "../../../../store/actions";
 import { firebaseInstance } from "../../../../config/firebase.config";
 import * as yup from "yup";
 import classes from "../styles/profile.module.scss";
@@ -35,6 +38,8 @@ function PatientProfile() {
   }, []);
 
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [passwordLoading, setPasswordLoading] = useState(false);
 
   const handleDialog = () => {
     setOpen((p) => !p);
@@ -60,11 +65,13 @@ function PatientProfile() {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
+      setLoading(true);
       dispatch({
         type: UPDATE_PATIENT_DATA,
         payload: {
           ...values,
         },
+        setLoading,
       });
     },
   });
@@ -76,12 +83,14 @@ function PatientProfile() {
       if (values.newPassword !== values.confirmPassword) {
         return;
       } else {
+        setPasswordLoading(true);
         dispatch({
           type: UPDATE_PATIENT_DATA,
           payload: {
             oldPassword: values.oldPassword,
             newPassword: values.newPassword,
           },
+          setLoading: setPasswordLoading,
         });
       }
     },
@@ -227,8 +236,12 @@ function PatientProfile() {
                         />
                       </Grid>
                       <Grid item xs={12}>
-                        <Button variant="contained" type="submit">
-                          Update
+                        <Button
+                          variant="contained"
+                          type="submit"
+                          disabled={loading}
+                        >
+                          {loading ? <CircularProgress size={24} /> : "Update"}
                         </Button>
                       </Grid>
                     </Grid>
@@ -295,8 +308,16 @@ function PatientProfile() {
                         />
                       </Grid>
                       <Grid item xs={12}>
-                        <Button variant="contained" type="submit">
-                          Set Password
+                        <Button
+                          variant="contained"
+                          type="submit"
+                          disabled={passwordLoading}
+                        >
+                          {passwordLoading ? (
+                            <CircularProgress size={24} />
+                          ) : (
+                            "Change Password"
+                          )}
                         </Button>
                       </Grid>
                     </Grid>

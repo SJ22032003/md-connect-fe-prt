@@ -36,6 +36,8 @@ function DoctorProfile() {
   }, []);
 
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [passwordLoading, setPasswordLoading] = useState(false);
 
   const handleDialog = () => {
     setOpen((p) => !p);
@@ -64,11 +66,13 @@ function DoctorProfile() {
     initialValues,
     validationSchema,
     onSubmit: (values) => {
+      setLoading(true);
       dispatch({
         type: UPDATE_DOCTOR_DATA,
         payload: {
           ...values,
         },
+        setLoading,
       });
     },
   });
@@ -80,12 +84,14 @@ function DoctorProfile() {
       if (values.newPassword !== values.confirmPassword) {
         return;
       } else {
+        setPasswordLoading(true);
         dispatch({
           type: UPDATE_DOCTOR_DATA,
           payload: {
             oldPassword: values.oldPassword,
             newPassword: values.newPassword,
           },
+          setLoading: setPasswordLoading,
         });
       }
     },
@@ -307,8 +313,16 @@ function DoctorProfile() {
                         />
                       </Grid>
                       <Grid item xs={12}>
-                        <Button variant="contained" type="submit">
-                          Update
+                        <Button
+                          variant="contained"
+                          type="submit"
+                          disabled={loading}
+                        >
+                          {loading ? (
+                            <CircularProgress size={24} />
+                          ) : (
+                            "Update Profile"
+                          )}
                         </Button>
                       </Grid>
                     </Grid>
@@ -375,8 +389,16 @@ function DoctorProfile() {
                         />
                       </Grid>
                       <Grid item xs={12}>
-                        <Button variant="contained" type="submit">
-                          Set Password
+                        <Button
+                          variant="contained"
+                          type="submit"
+                          disabled={passwordLoading}
+                        >
+                          {passwordLoading ? (
+                            <CircularProgress size={24} />
+                          ) : (
+                            "Change Password"
+                          )}
                         </Button>
                       </Grid>
                     </Grid>

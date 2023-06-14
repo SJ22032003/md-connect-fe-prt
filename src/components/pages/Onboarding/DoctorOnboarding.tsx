@@ -7,6 +7,7 @@ import { GET_DOCTOR_DATA, UPDATE_DOCTOR_DATA } from "../../../store/actions";
 import classes from "./styles/doctor.module.scss";
 import Loader from "../../../components/common/Loader";
 import * as yup from "yup";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function DoctorOnboarding() {
   const dispatch = useDispatch();
