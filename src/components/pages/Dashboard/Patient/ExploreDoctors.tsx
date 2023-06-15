@@ -53,7 +53,6 @@ function ExploreDoctors() {
   }, [debouncedSearch]);
 
   const handleAddDoctorToChat = (id: string) => {
-    setLoading(true);
     dispatch({
       type: UPDATE_NEW_CHAT_WITH_DOCTOR,
       payload: {
@@ -125,11 +124,8 @@ function ExploreDoctors() {
               <Box>
                 <Divider />
                 <Box className={classes.doctorDetailsBtnContainer}>
-                  <Button
-                    onClick={() => handleAddDoctorToChat(item._id)}
-                    disabled={loading}
-                  >
-                    {loading ? <CircularProgress size={20} /> : "Message"}
+                  <Button onClick={() => handleAddDoctorToChat(item._id)}>
+                    Message
                   </Button>
                 </Box>
               </Box>
