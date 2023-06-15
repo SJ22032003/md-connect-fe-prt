@@ -26,7 +26,7 @@ function ExploreDoctors() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState("");
   const debouncedSearch = useDebounce(search, 1000);
 
@@ -41,6 +41,8 @@ function ExploreDoctors() {
     });
   }, []);
   useEffect(() => {
+    if (debouncedSearch === "") return;
+    setLoading(true);
     dispatch({
       type: GET_PATIENT_DOCTORS_EXPLORE_DATA,
       payload: {
@@ -51,12 +53,15 @@ function ExploreDoctors() {
   }, [debouncedSearch]);
 
   const handleAddDoctorToChat = (id: string) => {
+    setLoading(true);
     dispatch({
       type: UPDATE_NEW_CHAT_WITH_DOCTOR,
       payload: {
         dId: id,
       },
-      navigate: (path: string = "/patient/dashboard/chat/to-doctor") => navigate(path),
+      navigate: (path: string = "/patient/dashboard/chat/to-doctor") =>
+        navigate(path),
+      setLoading,
     });
   };
 
@@ -120,8 +125,11 @@ function ExploreDoctors() {
               <Box>
                 <Divider />
                 <Box className={classes.doctorDetailsBtnContainer}>
-                  <Button onClick={() => handleAddDoctorToChat(item._id)}>
-                    Message Now
+                  <Button
+                    onClick={() => handleAddDoctorToChat(item._id)}
+                    disabled={loading}
+                  >
+                    {loading ? <CircularProgress size={20} /> : "Message"}
                   </Button>
                 </Box>
               </Box>

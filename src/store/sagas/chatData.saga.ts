@@ -25,10 +25,10 @@ export function* updateNewChatWithDoctorSaga(
     if (response && response.status === 200) {
       action.navigate && action.navigate();
     }
+    action.setLoading && action.setLoading(false);
   } catch (error: any) {
     console.log(error);
   }
-  action.setLoading && action.setLoading(false);
 }
 
 export function* getPatientMessageListSaga(

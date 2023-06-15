@@ -68,7 +68,7 @@ function EmergencyAvailable() {
             <Grid item xs={12}>
               {data && data.length ? (
                 data.map((item: any) => (
-                  <Paper elevation={3} key={item._id}>
+                  <Paper elevation={3} key={item._id} sx={{margin: "1rem 0"}}>
                     <Box className={classes.doctorMainDetailsContainer}>
                       <Box className={classes.doctorMainBelowDetailsContainer}>
                         <Box className={classes.avatarContainer}>
