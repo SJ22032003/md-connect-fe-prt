@@ -149,7 +149,7 @@ function DoctorProfile() {
                     />
                     <FormGroup className={classes.availableOnEmergency}>
                       <FormControlLabel
-                        control={<Switch defaultChecked color="error" onChange={(e) => handleEmergencySwitch(e)} />}
+                        control={<Switch checked={doctorData.availableOnEmergency} color="error" onChange={(e) => handleEmergencySwitch(e)} />}
                         label="Urgent Appointments"
                       />
                     </FormGroup>

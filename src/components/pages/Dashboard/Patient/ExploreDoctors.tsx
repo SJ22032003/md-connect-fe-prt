@@ -37,6 +37,9 @@ function ExploreDoctors() {
   useEffect(() => {
     dispatch({
       type: GET_PATIENT_DOCTORS_EXPLORE_DATA,
+      payload: {
+        search: "",
+      },
       setLoading,
     });
   }, []);
