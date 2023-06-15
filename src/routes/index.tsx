@@ -20,6 +20,7 @@ import {
   LazyPatientDashboardReport,
   LazyPatientExploreDoctors,
   LazyChatPage,
+  LazyPatientDashboardEmergency,
 
   //-----------------//
   LazyDoctorOnboardingPage,
@@ -72,6 +73,7 @@ function Routing() {
             <Route path="home" element={<LazyPatientDashboardHome />} />
             <Route path="profile" element={<LazyPatientDashboardProfile />} />
             <Route path="report" element={<LazyPatientDashboardReport />} />
+            <Route path="emergency" element={<LazyPatientDashboardEmergency />} />
             <Route
               path="explore-doctors"
               element={<LazyPatientExploreDoctors />}

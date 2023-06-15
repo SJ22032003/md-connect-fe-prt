@@ -3,6 +3,7 @@ import FaceIcon from "@mui/icons-material/Face";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import MessageIcon from "@mui/icons-material/Message";
 import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
+import BloodtypeIcon from '@mui/icons-material/Bloodtype';
 
 export const patientSideBarItems = [
   {
@@ -28,6 +29,12 @@ export const patientSideBarItems = [
     name: "Chat",
     redirect: "/patient/dashboard/chat/to-doctor",
     icon: <MessageIcon />,
+  },
+  {
+    id: "emergency",
+    name: "Urgent",
+    redirect: "/patient/dashboard/emergency",
+    icon: <BloodtypeIcon />,
   },
   {
     id: "explore-doctors",
