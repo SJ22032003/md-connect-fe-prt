@@ -15,10 +15,10 @@ function index() {
           <Home />
         </section>
         <section id="service">
-          <Service />
+          {/* <Service /> */}
         </section>
         <section id="about">
-          <About />
+          {/* <About /> */}
         </section>
         <footer>
           <Footer />

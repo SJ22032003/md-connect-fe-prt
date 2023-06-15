@@ -18,7 +18,7 @@ function Footer() {
             </Typography>
 
             <Typography component="p" gutterBottom={false}>
-              Made with ❤️ by Team BITWISE
+              Made by Team BITWISE
             </Typography>
           </Box>
         </div>

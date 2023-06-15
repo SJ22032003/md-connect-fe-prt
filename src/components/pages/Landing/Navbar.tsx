@@ -5,11 +5,10 @@ import mainLogo from "../../../assets/main_logo.png";
 import classes from "./styles/navbar.module.scss";
 import commonClasses from "./styles/common.module.scss";
 import MenuIcon from "@mui/icons-material/Menu";
-import useSize from "../../../hooks/useSize";
+
 
 function Navbar() {
   const navigate = useNavigate();
-  const size = useSize();
 
   const [open, setOpen] = useState(false);
 
@@ -73,25 +72,11 @@ function Navbar() {
               />
             </Grid>
             <Grid item xs={9}>
-              {size < 768 ? (
-                <IconButton
-                  onClick={() => setOpen((p) => !p)}
-                  sx={{
-                    color: "#000",
-                    float: "right",
-                  }}
-                >
-                  <MenuIcon />
-                </IconButton>
-              ) : (
                 <ul className={classes.navMenuList}>{navMenuList}</ul>
-              )}
             </Grid>
           </Grid>
         </Toolbar>
-        {size < 768 && open && (
-          <ul className={classes.navMenuListMobile}>{navMenuList}</ul>
-        )}
+   
       </AppBar>
     </Box>
   );
@@ -118,5 +103,5 @@ const landingPageNavItems = [
   {
     name: "Login",
     type: "button",
-  },
+  }, 
 ];
