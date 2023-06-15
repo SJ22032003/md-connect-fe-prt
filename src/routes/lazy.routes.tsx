@@ -12,6 +12,7 @@ export const LazyPatientDashboardHome = lazy(() => import("../components/pages/D
 export const LazyPatientDashboardProfile = lazy(() => import("../components/pages/Dashboard/Patient/PatientProfile"));
 export const LazyPatientDashboardReport = lazy(() => import("../components/pages/Dashboard/Patient/PatientReport"));
 export const LazyPatientExploreDoctors = lazy(() => import("../components/pages/Dashboard/Patient/ExploreDoctors"));
+export const LazyPatientDashboardEmergency = lazy(() => import("../components/pages/Dashboard/Patient/EmergencyAvailable"));
 
 export const LazyChatPage = lazy(() => import("../components/pages/Chat"));
 
