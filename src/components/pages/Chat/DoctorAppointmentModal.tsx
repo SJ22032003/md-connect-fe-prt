@@ -17,7 +17,7 @@ import * as yup from "yup";
 function DoctorAppointmentModal({
   open,
   handleClose,
-  handleMessageSentToSocket
+  handleMessageSentToSocket,
 }: any) {
   const [loading, setLoading] = useState(false);
 
@@ -25,7 +25,10 @@ function DoctorAppointmentModal({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      handleMessageSentToSocket("DOCTOR HAS SENT YOU AN APPOINTMENT 👨‍⚕️", values);
+      handleMessageSentToSocket(
+        "DOCTOR HAS SENT YOU AN APPOINTMENT 👨‍⚕️",
+        values
+      );
       closeModal();
     },
   });
@@ -95,6 +98,7 @@ function DoctorAppointmentModal({
                   className={classes.TextField}
                   name="appointmentOn"
                   onChange={formik.handleChange}
+                  inputProps={{ min: new Date().toISOString().split("T")[0] }}
                   value={formik.values.appointmentOn}
                   error={
                     formik.touched.appointmentOn &&

@@ -11,6 +11,9 @@ import {
   DialogContent,
   DialogActions,
   InputAdornment,
+  Switch,
+  FormGroup,
+  FormControlLabel,
 } from "@mui/material";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -97,6 +100,15 @@ function DoctorProfile() {
     },
   });
 
+  const handleEmergencySwitch = (e: any) => {
+    dispatch({
+      type: UPDATE_DOCTOR_DATA,
+      payload: {
+        availableOnEmergency: e.target.checked,
+      }
+    });
+  };
+
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
@@ -135,6 +147,12 @@ function DoctorProfile() {
                         },
                       }}
                     />
+                    <FormGroup className={classes.availableOnEmergency}>
+                      <FormControlLabel
+                        control={<Switch defaultChecked color="error" onChange={(e) => handleEmergencySwitch(e)} />}
+                        label="Urgent Appointments"
+                      />
+                    </FormGroup>
                   </Box>
                 </Box>
               </Paper>

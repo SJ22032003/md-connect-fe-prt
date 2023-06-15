@@ -13,6 +13,12 @@
     margin-bottom: 1rem;
     border: 2px solid var(--background-color) !important;
   }
+  .availableOnEmergency {
+    border: unset !important;
+    & > label > span {
+      font: 500 1rem var(--font-family) !important;
+    }
+  }
 }
 
 .profileInput {

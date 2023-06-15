@@ -6,7 +6,7 @@ interface IAction {
   type: string;
   payload: {};
   navigate?: (path?: string) => void;
-  setLoading?: () => void;
+  setLoading?: (bool: boolean) => void;
   fn?: () => void;
 }
 
@@ -20,7 +20,7 @@ export function* getPatientDoctorsExploreDataSaga(
         type: actionTypes.GET_PATIENT_DOCTORS_EXPLORE_DATA_SUCCESS,
         payload: response.data.data,
       });
-      action.setLoading && action.setLoading();
+      action.setLoading && action.setLoading(false);
     }
   } catch (error: any) {
     console.log(error);
