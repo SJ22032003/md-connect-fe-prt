@@ -78,6 +78,18 @@ export const deletePatientReportsApi = async (action: any) => {
   return res;
 };
 
+export const getEmergencyAvailableDoctorsApi = async (action: any) => {
+  let res = null;
+  try {
+    const response = await API.get("/user/patient/doctors-available-on-emergency");
+    res = response;
+  } catch (error: any) {
+    console.log(error.response);
+    toastMessage({ type: "error", message: error.response.data.message });
+  }
+  return res;
+}
+
 // -------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------

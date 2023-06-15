@@ -7,6 +7,7 @@ import {
   deletePatientReportsApi,
   getDoctorDataApi,
   updateDoctorDataApi,
+  getEmergencyAvailableDoctorsApi,
 } from "../network/apis/userData.api";
 
 export function* getPatientDataSaga(action: any): Generator<any, void, any> {
@@ -76,6 +77,18 @@ export function* deletePatientReportsSaga(
     console.log(error);
   }
 }
+
+export function* getEmergencyAvailableDoctorsSaga( action: any ): Generator<any, void, any> {
+  try {
+    const response = yield call(getEmergencyAvailableDoctorsApi, action);
+    if (response && response.status === 200) {
+      action.setData && action.setData(response.data.data);
+    }
+    action.setLoading && action.setLoading(false);
+  } catch (error: any) {
+    console.log(error);
+  }
+};
 
 // ---------------------------------------------------------
 // ---------------------------------------------------------

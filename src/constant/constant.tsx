@@ -32,7 +32,7 @@ export const patientSideBarItems = [
   },
   {
     id: "emergency",
-    name: "Urgent Availability",
+    name: "Urgent",
     redirect: "/patient/dashboard/emergency",
     icon: <BloodtypeIcon />,
   },

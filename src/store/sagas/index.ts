@@ -13,6 +13,7 @@ import {
   deletePatientReportsSaga,
   getDoctorDataSaga,
   updateDoctorDataSaga,
+  getEmergencyAvailableDoctorsSaga,
 } from "./userData.saga";
 import { getPatientDoctorsExploreDataSaga } from "./commonData.saga";
 import {
@@ -52,6 +53,11 @@ export default function* rootSaga() {
   yield takeLatest(
     actionTypes.GET_PATIENT_MESSAGE_LIST,
     getPatientMessageListSaga
+  );
+
+  yield takeLatest(
+    actionTypes.GET_EMERGENCY_AVAILABLE_DOCTORS,
+    getEmergencyAvailableDoctorsSaga
   );
 
   // -----------------------------
