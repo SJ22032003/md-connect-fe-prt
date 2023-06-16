@@ -21,6 +21,7 @@ import wideRangeDoctors from "../../../../assets/range_doctors.svg";
 import CircularProgress from "@mui/material/CircularProgress";
 import ManageSearchIcon from "@mui/icons-material/ManageSearch";
 import useDebounce from "../../../../hooks/useDebounce";
+import StarRatings from "react-star-ratings";
 
 function ExploreDoctors() {
   const dispatch = useDispatch();
@@ -44,7 +45,6 @@ function ExploreDoctors() {
     });
   }, []);
   useEffect(() => {
-    if (debouncedSearch === "") return;
     setLoading(true);
     dispatch({
       type: GET_PATIENT_DOCTORS_EXPLORE_DATA,
@@ -68,8 +68,7 @@ function ExploreDoctors() {
   };
 
   const handleSearchBox = (value: string) => {
-    if (value === "") return setSearch(value);
-    setLoading(true);
+    if (value === "") return setSearch(value)
     setSearch(value);
   };
 
@@ -121,6 +120,16 @@ function ExploreDoctors() {
                   <Typography variant="h5">{item.qualification}</Typography>
                   <Typography variant="h6">
                     <span> {item.experience} years</span> of experience
+                  </Typography>
+                  <Typography variant="h6">
+                    <StarRatings
+                      rating={item.rating}
+                      starRatedColor="#633ed8"
+                      numberOfStars={5}
+                      name="rating"
+                      starDimension="25px"
+                      starSpacing="clamp(1px, 0.5vw, 2px)"
+                    />
                   </Typography>
                 </Box>
               </Box>
