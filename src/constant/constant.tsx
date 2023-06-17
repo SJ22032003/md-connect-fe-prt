@@ -30,12 +30,12 @@ export const patientSideBarItems = [
     redirect: "/patient/dashboard/chat/to-doctor",
     icon: <MessageIcon />,
   },
-  {
-    id: "emergency",
-    name: "Urgent",
-    redirect: "/patient/dashboard/emergency",
-    icon: <BloodtypeIcon />,
-  },
+  // {
+  //   id: "emergency",
+  //   name: "Urgent",
+  //   redirect: "/patient/dashboard/emergency",
+  //   icon: <BloodtypeIcon />,
+  // },
   {
     id: "explore-doctors",
     name: "Explore Doctors",
