@@ -36,7 +36,6 @@ MediConnect is built using the following technologies:
 ## Features and Functionality
 - User Registration and Profile Creation: The platform provides separate login pages for patients and doctors, allowing users to create and manage their profiles.
 - Health Recommendations and Alerts: Based on user data and health history, MediConnect offers personalized health recommendations, reminders, and alerts for medication schedules, preventive screenings, immunizations, lifestyle modifications, and health tips.
-- AI-Powered Chatbots and Virtual Assistant: Chatbots enhance user experience by providing instant support, assisting with appointment scheduling, answering common health queries, and providing basic healthcare information.
 - Telehealth and Virtual Care: MediConnect enables remote consultations, monitoring, and virtual visits, ensuring timely access to healthcare services from the comfort of home.
 - Feedback and Ratings: Users can provide feedback and ratings to improve the quality of care and help others make informed decisions when choosing healthcare providers and services.
 
