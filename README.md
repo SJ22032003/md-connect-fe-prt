@@ -54,7 +54,10 @@ MediConnect employs the following strategies to market and grow its user base:
 ## Conclusion
 MediConnect is an innovative healthcare platform that leverages technology to improve healthcare delivery, access, and management. With its comprehensive features, revenue models, and growth strategies, MediConnect aims to tap into the growing digital health market, providing profitable and efficient healthcare solutions.
 
-## How does it look
+## Demo
+https://github.com/SJ22032003/md-connect-fe-prt/assets/85823986/c6a2dce0-cdc9-4251-a418-e0a4090ea558
+
+
 
 ![WhatsApp Image 2023-06-15 at 4 36 49 PM(2)](https://github.com/SJ22032003/md-connect-fe-prt/assets/85823986/68b8ab3c-6748-47b3-98ae-263afe505066)
 ![WhatsApp Image 2023-06-15 at 4 36 49 PM(1)](https://github.com/SJ22032003/md-connect-fe-prt/assets/85823986/92c5c73b-abea-41fe-988e-b0ccaea4fd5d)
